@@ -1,32 +1,45 @@
+"""
+Student Name: Saravenus Khon
+Date: 03/29/2025
+Assignment: Creating Python Programs
+"""
 
-"""
-student Name: Saravenus Khon
-date: 03/26/2025
-Assignment:Creating Python Programs
-"""
 while True:
-    # prompting the user for two numbers
-    num1 = int(input("Enter your first number here: "))
-    num2 = int(input("Enter the second number here: "))
 
+    print("\n Please select Option A or B:")
+    print("Option A: Add and Subtract a pair of numbers")
+    print("Option B: Multiply and Divide a pair of numbers")
 
-    # Perform the addition steps here
-    # Perform the subtraction steps here
-    sum = num1 + num2
-    difference = num1 - num2
+    choice = input("Please Select A or B: ").strip()
 
-    # Displays the addition and subtraction results
-    print("Part 1: ")
-    print(num1, "+", num2, "= ", sum)
-    print(num1, "-", num2, "=", difference)
+    # Validate input to accept only "A" or "B"
+    if choice not in ["A", "B"]:
+        print("Invalid choice, please enter A or B.")
+        continue  # Restart the loop if the user input is not A or B
 
-    # asks the user if they want to continue
-    option = input("want to try another set of numbers?  [Yes or No ] ").strip().lower()
-    if option != "yes":
-        print("Thanks for playing")
-        break  # breaks out of the loop
+    # Prompt the user for two numbers
+    num1 = float(input("Enter your first number: "))
+    num2 = float(input("Enter your second number: "))
 
-#test
+    # Perform Addition and Subtraction here
+    if choice == "1":
+        sum = num1 + num2
+        difference = num1 - num2
+        print("\n Option A (Part 1) : Addition and Subtraction for the noobs.. J/K!")
+        print(f"{num1} + {num2} = {sum}")
+        print(f"{num1} - {num2} = {difference}")
 
+    # Perform Multiplication and Division here
+    else:
+        product = num1 * num2
+        quotient = num1 / num2 if num2 != 0 else "Undefined (division by zero not allowed.. Nope! )"
 
+        print("\n Option B (Part 2 ): Multiplication and Division! the fun stuff")
+        print(f"{num1} × {num2} = {product}")
+        print(f"{num1} ÷ {num2} = {quotient}")
 
+    # Ask if the user wants to keep playing
+    retry = input("\n Want to try another set of numbers? [Yes or No]: ").strip().lower()
+    if retry != "yes":
+        print("Thanks for playing!")
+        break  # Exit the loop
